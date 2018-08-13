@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730008D5A5FF2232567B8B3B /* Pods_EasyOTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC5B27CDA4F52B1B310CA40 /* Pods_EasyOTP.framework */; };
 		796A81F3211FB29B00648ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A81F2211FB29B00648ABA /* AppDelegate.swift */; };
 		796A81F8211FB29B00648ABA /* EasyOTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 796A81F6211FB29B00648ABA /* EasyOTP.xcdatamodeld */; };
 		796A81FA211FB29D00648ABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796A81F9211FB29D00648ABA /* Assets.xcassets */; };
@@ -14,6 +15,14 @@
 		796A8209211FB29D00648ABA /* EasyOTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A8208211FB29D00648ABA /* EasyOTPTests.swift */; };
 		796A8214211FB29D00648ABA /* EasyOTPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A8213211FB29D00648ABA /* EasyOTPUITests.swift */; };
 		796A8222211FF65200648ABA /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A8221211FF65200648ABA /* StatusMenuController.swift */; };
+		796A82262120ED1000648ABA /* TOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82252120ED1000648ABA /* TOTP.swift */; };
+		796A82282120ED3500648ABA /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82272120ED3500648ABA /* OTPAlgorithm.swift */; };
+		796A822A2120ED6500648ABA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82292120ED6500648ABA /* Generator.swift */; };
+		796A822C2120F4BE00648ABA /* HOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822B2120F4BE00648ABA /* HOTP.swift */; };
+		796A822E2120F51A00648ABA /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822D2120F51A00648ABA /* Base32.swift */; };
+		796A82302120F53100648ABA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822F2120F53100648ABA /* StringExtension.swift */; };
+		796A82322121364D00648ABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82312121364D00648ABA /* ViewController.swift */; };
+		79C4866421215022003A7B11 /* AddItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4866321215022003A7B11 /* AddItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EDDEF9D7135BAB0CAD37E49 /* Pods-EasyOTP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyOTP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyOTP/Pods-EasyOTP.debug.xcconfig"; sourceTree = "<group>"; };
+		458A99B726D183829EBE5DA1 /* Pods-EasyOTP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyOTP.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyOTP/Pods-EasyOTP.release.xcconfig"; sourceTree = "<group>"; };
 		796A81EF211FB29B00648ABA /* EasyOTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyOTP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		796A81F2211FB29B00648ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		796A81F7211FB29B00648ABA /* EasyOTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyOTP.xcdatamodel; sourceTree = "<group>"; };
@@ -48,6 +59,15 @@
 		796A8213211FB29D00648ABA /* EasyOTPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyOTPUITests.swift; sourceTree = "<group>"; };
 		796A8215211FB29D00648ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		796A8221211FF65200648ABA /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		796A82252120ED1000648ABA /* TOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTP.swift; sourceTree = "<group>"; };
+		796A82272120ED3500648ABA /* OTPAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAlgorithm.swift; sourceTree = "<group>"; };
+		796A82292120ED6500648ABA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		796A822B2120F4BE00648ABA /* HOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HOTP.swift; sourceTree = "<group>"; };
+		796A822D2120F51A00648ABA /* Base32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
+		796A822F2120F53100648ABA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		796A82312121364D00648ABA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79C4866321215022003A7B11 /* AddItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemController.swift; sourceTree = "<group>"; };
+		EDC5B27CDA4F52B1B310CA40 /* Pods_EasyOTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyOTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730008D5A5FF2232567B8B3B /* Pods_EasyOTP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		103706430908492C68163208 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDC5B27CDA4F52B1B310CA40 /* Pods_EasyOTP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		12C8F1CAA143528A426E929D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDEF9D7135BAB0CAD37E49 /* Pods-EasyOTP.debug.xcconfig */,
+				458A99B726D183829EBE5DA1 /* Pods-EasyOTP.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		796A81E6211FB29B00648ABA = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +120,8 @@
 				796A8207211FB29D00648ABA /* EasyOTPTests */,
 				796A8212211FB29D00648ABA /* EasyOTPUITests */,
 				796A81F0211FB29B00648ABA /* Products */,
+				12C8F1CAA143528A426E929D /* Pods */,
+				103706430908492C68163208 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +145,14 @@
 				796A81FE211FB29D00648ABA /* Info.plist */,
 				796A81FF211FB29D00648ABA /* EasyOTP.entitlements */,
 				796A81F6211FB29B00648ABA /* EasyOTP.xcdatamodeld */,
+				796A82252120ED1000648ABA /* TOTP.swift */,
+				796A82272120ED3500648ABA /* OTPAlgorithm.swift */,
+				796A82292120ED6500648ABA /* Generator.swift */,
+				796A822B2120F4BE00648ABA /* HOTP.swift */,
+				796A822D2120F51A00648ABA /* Base32.swift */,
+				796A822F2120F53100648ABA /* StringExtension.swift */,
+				796A82312121364D00648ABA /* ViewController.swift */,
+				79C4866321215022003A7B11 /* AddItemController.swift */,
 			);
 			path = EasyOTP;
 			sourceTree = "<group>";
@@ -134,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 796A8218211FB29D00648ABA /* Build configuration list for PBXNativeTarget "EasyOTP" */;
 			buildPhases = (
+				AA17A1E68D2BCA409F00A818 /* [CP] Check Pods Manifest.lock */,
 				796A81EB211FB29B00648ABA /* Sources */,
 				796A81EC211FB29B00648ABA /* Frameworks */,
 				796A81ED211FB29B00648ABA /* Resources */,
+				D05FCC8287CFF4BB9C9F2280 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,14 +302,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AA17A1E68D2BCA409F00A818 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyOTP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D05FCC8287CFF4BB9C9F2280 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EasyOTP/Pods-EasyOTP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyOTP/Pods-EasyOTP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		796A81EB211FB29B00648ABA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796A82322121364D00648ABA /* ViewController.swift in Sources */,
+				796A82282120ED3500648ABA /* OTPAlgorithm.swift in Sources */,
+				796A82262120ED1000648ABA /* TOTP.swift in Sources */,
+				796A822C2120F4BE00648ABA /* HOTP.swift in Sources */,
 				796A81F8211FB29B00648ABA /* EasyOTP.xcdatamodeld in Sources */,
+				79C4866421215022003A7B11 /* AddItemController.swift in Sources */,
+				796A822A2120ED6500648ABA /* Generator.swift in Sources */,
+				796A82302120F53100648ABA /* StringExtension.swift in Sources */,
 				796A8222211FF65200648ABA /* StatusMenuController.swift in Sources */,
 				796A81F3211FB29B00648ABA /* AppDelegate.swift in Sources */,
+				796A822E2120F51A00648ABA /* Base32.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +518,7 @@
 		};
 		796A8219211FB29D00648ABA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EDDEF9D7135BAB0CAD37E49 /* Pods-EasyOTP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EasyOTP/EasyOTP.entitlements;
@@ -439,6 +537,7 @@
 		};
 		796A821A211FB29D00648ABA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 458A99B726D183829EBE5DA1 /* Pods-EasyOTP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EasyOTP/EasyOTP.entitlements;
