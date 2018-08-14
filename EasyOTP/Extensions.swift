@@ -43,7 +43,19 @@ extension HasRun {
 }
 extension NSObject: HasRun { }
 
-extension NSViewController {
+//extension NSViewController {
+//    var appDelegate:AppDelegate {
+//        return NSApplication.shared.delegate as! AppDelegate
+//    }
+//
+//    func getManagedContext() -> NSManagedObjectContext? {
+//        //GET MANAGED CONTEXT
+//        return appDelegate.persistentContainer.viewContext
+//
+//    }
+//}
+
+extension NSObject {
     var appDelegate:AppDelegate {
         return NSApplication.shared.delegate as! AppDelegate
     }

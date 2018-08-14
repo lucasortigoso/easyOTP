@@ -130,14 +130,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.title = "EasyOTP"
         statusItem.menu = statusMenu
         
-        //        items.forEach { item in
-        //            let index = items.index(of: item)
-        //            statusMenu.addItem(withTitle: item, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
-        //        }
+                getItems()?.forEach { item in
+                    let index = getItems()?.index(of: item)
+                    statusMenu.addItem(withTitle: item.issuer!, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
+                }
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "S")
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Quit", action: #selector(quitClicked), keyEquivalent: "Q")
+    }
+    
+    func getItems() -> [Keys]?{
+        var result: [Keys] = []
+        getManagedContext()?.run {
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Keys")
+            request.returnsObjectsAsFaults = false
+            do {
+                 result = try $0.fetch(request) as! [Keys]
+            } catch {
+                print("Failed")
+            }
+        }
+        return result
     }
     
     @objc func addItemClicked(){

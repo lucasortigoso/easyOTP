@@ -22,20 +22,9 @@ class AddItemController: NSViewController, NSApplicationDelegate {
     
     @IBAction func cancelButtonClick(_ sender: Any) {
         print("Close")
-        //        self.view.window!.performClose(nil) // or performClose(self)
+        self.view.window!.performClose(nil) // or performClose(self)
         
-        getManagedContext()?.run {
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Keys")
-            request.returnsObjectsAsFaults = false
-            
-            do {
-                let result = try $0.fetch(request) as! [Keys]
-                print(result)
-                
-            } catch {
-                print("Failed")
-            }
-        }
+        
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
@@ -47,7 +36,7 @@ class AddItemController: NSViewController, NSApplicationDelegate {
             key.setValue(self.txtIssuer.stringValue, forKeyPath: "issuer")
             key.setValue(self.txtSecret.stringValue, forKeyPath: "secret")
             key.setValue(self.txtUserName.stringValue, forKeyPath: "username")
-            key.setValue(NSDate().timeIntervalSince1970, forKeyPath: "date")
+            key.setValue(NSDate().timeIntervalSince1970, forKeyPath: "createddate")
             
             $0.saveIt()
         }
