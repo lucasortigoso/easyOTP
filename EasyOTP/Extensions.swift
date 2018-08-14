@@ -69,7 +69,7 @@ extension NSObject {
 
 
 protocol SaveIt { }
-extension HasRun {
+extension SaveIt {
     func saveIt(closure:(Self) -> ()) {
         closure(self)
     }

@@ -11,9 +11,11 @@ import LocalAuthentication
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet weak var touchBar: NSTouchBar!
     @IBOutlet weak var statusMenu: NSMenu!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        appDelegate.touchBar = touchBar
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -160,6 +162,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier(
                     rawValue: "primaryWindow")) as! NSWindowController
+        myWindowController.window?.makeKeyAndOrderFront(self)
         myWindowController.showWindow(self)
         
     }
