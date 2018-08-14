@@ -14,7 +14,6 @@
 		796A81FD211FB29D00648ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796A81FB211FB29D00648ABA /* Main.storyboard */; };
 		796A8209211FB29D00648ABA /* EasyOTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A8208211FB29D00648ABA /* EasyOTPTests.swift */; };
 		796A8214211FB29D00648ABA /* EasyOTPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A8213211FB29D00648ABA /* EasyOTPUITests.swift */; };
-		796A8222211FF65200648ABA /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A8221211FF65200648ABA /* StatusMenuController.swift */; };
 		796A82262120ED1000648ABA /* TOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82252120ED1000648ABA /* TOTP.swift */; };
 		796A82282120ED3500648ABA /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82272120ED3500648ABA /* OTPAlgorithm.swift */; };
 		796A822A2120ED6500648ABA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82292120ED6500648ABA /* Generator.swift */; };
@@ -58,7 +57,6 @@
 		796A820F211FB29D00648ABA /* EasyOTPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyOTPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		796A8213211FB29D00648ABA /* EasyOTPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyOTPUITests.swift; sourceTree = "<group>"; };
 		796A8215211FB29D00648ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		796A8221211FF65200648ABA /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		796A82252120ED1000648ABA /* TOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTP.swift; sourceTree = "<group>"; };
 		796A82272120ED3500648ABA /* OTPAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAlgorithm.swift; sourceTree = "<group>"; };
 		796A82292120ED6500648ABA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				796A81F2211FB29B00648ABA /* AppDelegate.swift */,
-				796A8221211FF65200648ABA /* StatusMenuController.swift */,
 				796A81F9211FB29D00648ABA /* Assets.xcassets */,
 				796A81FB211FB29D00648ABA /* Main.storyboard */,
 				796A81FE211FB29D00648ABA /* Info.plist */,
@@ -354,7 +351,6 @@
 				79C4866421215022003A7B11 /* AddItemController.swift in Sources */,
 				796A822A2120ED6500648ABA /* Generator.swift in Sources */,
 				796A82302120F53100648ABA /* Extensions.swift in Sources */,
-				796A8222211FF65200648ABA /* StatusMenuController.swift in Sources */,
 				796A81F3211FB29B00648ABA /* AppDelegate.swift in Sources */,
 				796A822E2120F51A00648ABA /* Base32.swift in Sources */,
 			);
