@@ -709,7 +709,7 @@
         <!--AddItem-->
         <scene sceneID="viR-3j-QM4">
             <objects>
-                <viewController title="AddItem" id="Y3S-d9-3Gi" sceneMemberID="viewController">
+                <viewController title="AddItem" id="Y3S-d9-3Gi" customClass="AddItemController" customModule="EasyOTP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0Iz-IW-3cU">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="153"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -769,6 +769,9 @@
 Gw
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonClick:" target="Y3S-d9-3Gi" id="7fe-FP-K8h"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70C-eG-pAk">
                                 <rect key="frame" x="356" y="3" width="80" height="32"/>
@@ -780,6 +783,9 @@ Gw
 DQ
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="saveButtonClicked:" target="Y3S-d9-3Gi" id="8tZ-qw-DbD"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kr6-r4-rLu">
                                 <rect key="frame" x="18" y="84" width="70" height="17"/>
@@ -792,6 +798,11 @@ DQ
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="txtIssuer" destination="Bwg-2N-OIH" id="d9T-Oc-qZ1"/>
+                        <outlet property="txtSecret" destination="QDS-WX-QcY" id="ctR-yt-b1w"/>
+                        <outlet property="txtUserName" destination="7hM-lJ-2Le" id="GTN-49-Z08"/>
+                    </connections>
                 </viewController>
                 <customObject id="0of-eo-Ljq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

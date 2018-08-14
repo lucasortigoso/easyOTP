@@ -16,19 +16,19 @@ class StatusMenuController: NSObject {
     let items = [""]
     let secrets = [""]
     
-    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     override func awakeFromNib() {
+
         //        let icon = NSImage(named: "statusIcon")
         //        icon?.isTemplate = true // best for dark mode
         statusItem.title = "EasyOTP"
         statusItem.menu = statusMenu
         
-        items.forEach { item in
-            let index = items.index(of: item)
-            statusMenu.addItem(withTitle: item, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
-        }
+//        items.forEach { item in
+//            let index = items.index(of: item)
+//            statusMenu.addItem(withTitle: item, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
+//        }
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "S")
         statusMenu.addItem(NSMenuItem.separator())
@@ -42,6 +42,7 @@ class StatusMenuController: NSObject {
                 withIdentifier: NSStoryboard.SceneIdentifier(
                     rawValue: "primaryWindow")) as! NSWindowController
         myWindowController.showWindow(self)
+        
     }
     
     @objc func invalidateAuth(){
@@ -63,6 +64,7 @@ class StatusMenuController: NSObject {
             }
         }
     }
+    
     
     func getToken(secret: String) -> String {
         localAuthenticationContext.localizedFallbackTitle = "Use Passcode"
@@ -111,7 +113,7 @@ class StatusMenuController: NSObject {
     
     
     @IBAction func otpItemClicked(sender: NSMenuItem) {
-        print(getToken(secret: "OABYGOOMDFQQY6TQ3AVOPWQGMDJNYUXDRFNZHPIWA64PECHLQNZ4V5TNT7PXVPLF"))
+//        print(getToken(secret: "OABYGOOMDFQQY6TQ3AVOPWQGMDJNYUXDRFNZHPIWA64PECHLQNZ4V5TNT7PXVPLF"))
         Timer.scheduledTimer(withTimeInterval: 120, repeats: false) { [weak self] timer in
             self?.invalidateAuth()
         }
