@@ -9,7 +9,7 @@
 import Cocoa
 import LocalAuthentication
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSObject, NSApplicationDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     
     var localAuthenticationContext = LAContext()

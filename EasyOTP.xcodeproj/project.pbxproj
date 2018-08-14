@@ -20,7 +20,7 @@
 		796A822A2120ED6500648ABA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82292120ED6500648ABA /* Generator.swift */; };
 		796A822C2120F4BE00648ABA /* HOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822B2120F4BE00648ABA /* HOTP.swift */; };
 		796A822E2120F51A00648ABA /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822D2120F51A00648ABA /* Base32.swift */; };
-		796A82302120F53100648ABA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822F2120F53100648ABA /* StringExtension.swift */; };
+		796A82302120F53100648ABA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822F2120F53100648ABA /* Extensions.swift */; };
 		796A82322121364D00648ABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82312121364D00648ABA /* ViewController.swift */; };
 		79C4866421215022003A7B11 /* AddItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4866321215022003A7B11 /* AddItemController.swift */; };
 /* End PBXBuildFile section */
@@ -64,7 +64,7 @@
 		796A82292120ED6500648ABA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		796A822B2120F4BE00648ABA /* HOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HOTP.swift; sourceTree = "<group>"; };
 		796A822D2120F51A00648ABA /* Base32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
-		796A822F2120F53100648ABA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		796A822F2120F53100648ABA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		796A82312121364D00648ABA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79C4866321215022003A7B11 /* AddItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemController.swift; sourceTree = "<group>"; };
 		EDC5B27CDA4F52B1B310CA40 /* Pods_EasyOTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyOTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +150,7 @@
 				796A82292120ED6500648ABA /* Generator.swift */,
 				796A822B2120F4BE00648ABA /* HOTP.swift */,
 				796A822D2120F51A00648ABA /* Base32.swift */,
-				796A822F2120F53100648ABA /* StringExtension.swift */,
+				796A822F2120F53100648ABA /* Extensions.swift */,
 				796A82312121364D00648ABA /* ViewController.swift */,
 				79C4866321215022003A7B11 /* AddItemController.swift */,
 			);
@@ -353,7 +353,7 @@
 				796A81F8211FB29B00648ABA /* EasyOTP.xcdatamodeld in Sources */,
 				79C4866421215022003A7B11 /* AddItemController.swift in Sources */,
 				796A822A2120ED6500648ABA /* Generator.swift in Sources */,
-				796A82302120F53100648ABA /* StringExtension.swift in Sources */,
+				796A82302120F53100648ABA /* Extensions.swift in Sources */,
 				796A8222211FF65200648ABA /* StatusMenuController.swift in Sources */,
 				796A81F3211FB29B00648ABA /* AppDelegate.swift in Sources */,
 				796A822E2120F51A00648ABA /* Base32.swift in Sources */,
