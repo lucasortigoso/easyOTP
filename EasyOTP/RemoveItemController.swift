@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  EasyOTP
@@ -10,14 +11,18 @@ import Foundation
 import Cocoa
 import CoreData
 
-class AddItemController: NSViewController {
+class RemoveItemController: NSViewController, NSComboBoxDataSource {
     
-    @IBOutlet weak var txtIssuer: NSTextField!
-    @IBOutlet weak var txtUserName: NSTextField!
-    @IBOutlet weak var txtSecret: NSTextField!
+    
+    @IBOutlet weak var rcbItems: NSPopUpButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        appDelegate.getItems()?.forEach({ (item) in
+            rcbItems.addItem(withTitle: item.issuer!)
+        })
+        
     }
     
     @IBAction func cancelButtonClick(_ sender: Any) {
@@ -27,11 +32,14 @@ class AddItemController: NSViewController {
         
     }
     
-    @IBAction func saveButtonClicked(_ sender: Any) {
-        print("Save")
-        appDelegate.saveItem(issuer: self.txtIssuer.stringValue, username: self.txtUserName.stringValue, secret: self.txtSecret.stringValue)
+    @IBAction func removeButtonClicked(_ sender: Any) {
+        print("Remove")
+        appDelegate.deleteItem(issuer: (rcbItems.selectedItem?.title)!)
         self.view.window!.performClose(nil) // or performClose(self)
     }
+    
+
+
     
     
     

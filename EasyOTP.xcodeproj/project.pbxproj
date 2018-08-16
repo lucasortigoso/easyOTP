@@ -22,6 +22,7 @@
 		796A82302120F53100648ABA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A822F2120F53100648ABA /* Extensions.swift */; };
 		796A82322121364D00648ABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A82312121364D00648ABA /* ViewController.swift */; };
 		79C4866421215022003A7B11 /* AddItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4866321215022003A7B11 /* AddItemController.swift */; };
+		79C4866C21254175003A7B11 /* RemoveItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C4866B21254175003A7B11 /* RemoveItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		796A822F2120F53100648ABA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		796A82312121364D00648ABA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79C4866321215022003A7B11 /* AddItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemController.swift; sourceTree = "<group>"; };
+		79C4866B21254175003A7B11 /* RemoveItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemController.swift; sourceTree = "<group>"; };
 		EDC5B27CDA4F52B1B310CA40 /* Pods_EasyOTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyOTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				796A822F2120F53100648ABA /* Extensions.swift */,
 				796A82312121364D00648ABA /* ViewController.swift */,
 				79C4866321215022003A7B11 /* AddItemController.swift */,
+				79C4866B21254175003A7B11 /* RemoveItemController.swift */,
 			);
 			path = EasyOTP;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			files = (
 				796A82322121364D00648ABA /* ViewController.swift in Sources */,
 				796A82282120ED3500648ABA /* OTPAlgorithm.swift in Sources */,
+				79C4866C21254175003A7B11 /* RemoveItemController.swift in Sources */,
 				796A82262120ED1000648ABA /* TOTP.swift in Sources */,
 				796A822C2120F4BE00648ABA /* HOTP.swift in Sources */,
 				796A81F8211FB29B00648ABA /* EasyOTP.xcdatamodeld in Sources */,

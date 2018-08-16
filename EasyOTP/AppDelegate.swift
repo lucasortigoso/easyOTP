@@ -10,7 +10,7 @@ import Cocoa
 import LocalAuthentication
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     @IBOutlet weak var touchBar: NSTouchBar!
     @IBOutlet weak var statusMenu: NSMenu!
 
@@ -132,14 +132,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.title = "EasyOTP"
         statusItem.menu = statusMenu
         
-                getItems()?.forEach { item in
-                    let index = getItems()?.index(of: item)
-                    statusMenu.addItem(withTitle: item.issuer!, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
-                }
-        statusMenu.addItem(NSMenuItem.separator())
-        statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "S")
-        statusMenu.addItem(NSMenuItem.separator())
-        statusMenu.addItem(withTitle: "Quit", action: #selector(quitClicked), keyEquivalent: "Q")
+        loadMenu()
+        
+    }
+    
+    
+    func deleteItem(issuer: String){
+        getManagedContext()?.delete((getItems()?.first{$0.issuer == issuer })!)
+        getManagedContext()?.saveIt()
+        loadMenu()
+        
+    }
+    
+    
+    func saveItem(issuer: String, username: String, secret: String){
+        getManagedContext()?.run {
+            //KEYS
+            let entity = NSEntityDescription.entity(forEntityName: "Keys", in: $0)!
+            let key = NSManagedObject(entity: entity, insertInto: $0)
+            key.setValue(issuer, forKeyPath: "issuer")
+            key.setValue(username, forKeyPath: "username")
+            key.setValue(secret, forKeyPath: "secret")
+            key.setValue(NSDate().timeIntervalSince1970, forKeyPath: "createddate")
+            
+            $0.saveIt()
+            loadMenu()
+        }
     }
     
     func getItems() -> [Keys]?{
@@ -161,9 +179,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let myWindowController = NSStoryboard(name:
             NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier(
-                    rawValue: "primaryWindow")) as! NSWindowController
+                    rawValue: "addWindow")) as! NSWindowController
         myWindowController.window?.makeKeyAndOrderFront(self)
         myWindowController.showWindow(self)
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        
+    }
+    
+    @objc func removeItemClicked(){
+        print("removeItemClicked")
+        let myWindowController = NSStoryboard(name:
+            NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(
+                withIdentifier: NSStoryboard.SceneIdentifier(
+                    rawValue: "removeWindow")) as! NSWindowController
+        myWindowController.window?.makeKeyAndOrderFront(self)
+        myWindowController.showWindow(self)
+        NSApplication.shared.activate(ignoringOtherApps: true)
         
     }
     
@@ -172,6 +203,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("LAContext()")
     }
     
+    func loadMenu(){
+        statusMenu.removeAllItems()
+        getItems()?.forEach { item in
+            let index = getItems()?.index(of: item)
+            statusMenu.addItem(withTitle: item.issuer!, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
+        }
+        statusMenu.addItem(NSMenuItem.separator())
+        statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "A")
+        statusMenu.addItem(withTitle: "Remove...", action: #selector(removeItemClicked), keyEquivalent: "R")
+        statusMenu.addItem(NSMenuItem.separator())
+        statusMenu.addItem(withTitle: "Quit", action: #selector(quitClicked), keyEquivalent: "Q")
+    }
     
     func copyToClipboard(text: String){
         // Set string to clipboard
@@ -234,8 +277,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
+    
+    
+    
     @IBAction func otpItemClicked(sender: NSMenuItem) {
-        //        print(getToken(secret: "OABYGOOMDFQQY6TQ3AVOPWQGMDJNYUXDRFNZHPIWA64PECHLQNZ4V5TNT7PXVPLF"))
+        print(getToken(secret: (getItems()?.first{$0.issuer == sender.title}?.secret)!))
         Timer.scheduledTimer(withTimeInterval: 120, repeats: false) { [weak self] timer in
             self?.invalidateAuth()
         }

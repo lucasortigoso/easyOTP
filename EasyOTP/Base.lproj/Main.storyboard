@@ -688,7 +688,7 @@
         <!--Window Controller-->
         <scene sceneID="6CZ-IH-kPm">
             <objects>
-                <windowController storyboardIdentifier="primaryWindow" id="Woo-H8-7NW" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="addWindow" id="Woo-H8-7NW" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="eFK-SL-jBJ">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -699,12 +699,12 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="Y3S-d9-3Gi" kind="relationship" relationship="window.shadowedContentViewController" id="UxS-pM-gtD"/>
+                        <segue destination="Y3S-d9-3Gi" kind="relationship" relationship="window.shadowedContentViewController" id="dGJ-cj-lg1"/>
                     </connections>
                 </windowController>
                 <customObject id="Ufx-Yb-nua" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="233"/>
+            <point key="canvasLocation" x="-82" y="269"/>
         </scene>
         <!--AddItem-->
         <scene sceneID="viR-3j-QM4">
@@ -807,6 +807,91 @@ DQ
                 <customObject id="0of-eo-Ljq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="66" y="669"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="Ba0-vy-ntt">
+            <objects>
+                <windowController storyboardIdentifier="removeWindow" id="Ebh-eS-4aV" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="TiX-CT-dlu">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+                        <connections>
+                            <outlet property="delegate" destination="Ebh-eS-4aV" id="Kxi-JR-kh1"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="QXi-PO-4Mb" kind="relationship" relationship="window.shadowedContentViewController" id="T2J-zk-ouo"/>
+                    </connections>
+                </windowController>
+                <customObject id="D0g-bV-dRk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="213"/>
+        </scene>
+        <!--RemoveItem-->
+        <scene sceneID="Hhk-UM-ZEC">
+            <objects>
+                <viewController title="RemoveItem" id="QXi-PO-4Mb" customClass="RemoveItemController" customModule="EasyOTP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="UU0-O1-nJR">
+                        <rect key="frame" x="0.0" y="0.0" width="314" height="99"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVE-Lo-0bV">
+                                <rect key="frame" x="194" y="13" width="80" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="XHf-OP-m9x">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeButtonClicked:" target="QXi-PO-4Mb" id="D8R-CO-UOq"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7S-qJ-T0E">
+                                <rect key="frame" x="39" y="13" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SAN-V0-Jn8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonClick:" target="QXi-PO-4Mb" id="YzP-1W-xtb"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-pq-r54">
+                                <rect key="frame" x="43" y="62" width="45" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Issuer:" id="SzJ-zt-2hO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jy6-oz-w2O">
+                                <rect key="frame" x="92" y="55" width="179" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="zky-i3-p5i">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" title="Selecione" id="jIt-CQ-JtG"/>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="rcbItems" destination="Jy6-oz-w2O" id="p0x-R6-9Zp"/>
+                    </connections>
+                </viewController>
+                <customObject id="dz7-Ux-WvB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="602.5"/>
         </scene>
         <!--Table-->
         <scene sceneID="Ud0-Zd-hWS">
@@ -941,7 +1026,7 @@ DQ
                 </viewController>
                 <customObject id="Zd1-dm-adV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="216"/>
+            <point key="canvasLocation" x="1118" y="285"/>
         </scene>
     </scenes>
     <resources>
