@@ -11,7 +11,7 @@ import Foundation
 import Cocoa
 import CoreData
 
-class RemoveItemController: NSViewController, NSComboBoxDataSource {
+class RemoveItemController: NSViewController {
     
     
     @IBOutlet weak var rcbItems: NSPopUpButton!
@@ -38,11 +38,6 @@ class RemoveItemController: NSViewController, NSComboBoxDataSource {
         self.view.window!.performClose(nil) // or performClose(self)
     }
     
-
-
-    
-    
-    
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
@@ -50,4 +45,17 @@ class RemoveItemController: NSViewController, NSComboBoxDataSource {
     }
     
     
+    
+}
+
+// MARK: - NSComboBoxDataSource
+extension RemoveItemController: NSComboBoxDataSource {
+    
+    func numberOfItems(in comboBox: NSComboBox) -> Int {
+         return 0
+    }
+    
+    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
+        return nil
+    }
 }
