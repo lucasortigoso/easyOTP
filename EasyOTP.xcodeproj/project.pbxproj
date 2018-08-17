@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		730008D5A5FF2232567B8B3B /* Pods_EasyOTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC5B27CDA4F52B1B310CA40 /* Pods_EasyOTP.framework */; };
+		7955CEAA21269B51004A123E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C48672212653A9003A7B11 /* NotificationCenter.framework */; };
+		7955CEAD21269B51004A123E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955CEAC21269B51004A123E /* TodayViewController.swift */; };
+		7955CEB021269B51004A123E /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7955CEAE21269B51004A123E /* TodayViewController.xib */; };
+		7955CEB421269B51004A123E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7955CEB221269B51004A123E /* InfoPlist.strings */; };
+		7955CEB821269B51004A123E /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7955CEA921269B51004A123E /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		796A81F3211FB29B00648ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A81F2211FB29B00648ABA /* AppDelegate.swift */; };
 		796A81F8211FB29B00648ABA /* EasyOTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 796A81F6211FB29B00648ABA /* EasyOTP.xcdatamodeld */; };
 		796A81FD211FB29D00648ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796A81FB211FB29D00648ABA /* Main.storyboard */; };
@@ -31,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7955CEB621269B51004A123E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 796A81E7211FB29B00648ABA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7955CEA821269B51004A123E;
+			remoteInfo = widget;
+		};
 		796A8205211FB29D00648ABA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 796A81E7211FB29B00648ABA /* Project object */;
@@ -61,6 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				7955CEB821269B51004A123E /* widget.appex in Embed App Extensions */,
 				79C48681212653A9003A7B11 /* today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -71,6 +84,12 @@
 /* Begin PBXFileReference section */
 		3EDDEF9D7135BAB0CAD37E49 /* Pods-EasyOTP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyOTP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyOTP/Pods-EasyOTP.debug.xcconfig"; sourceTree = "<group>"; };
 		458A99B726D183829EBE5DA1 /* Pods-EasyOTP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyOTP.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyOTP/Pods-EasyOTP.release.xcconfig"; sourceTree = "<group>"; };
+		7955CEA921269B51004A123E /* widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7955CEAC21269B51004A123E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		7955CEAF21269B51004A123E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		7955CEB121269B51004A123E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7955CEB321269B51004A123E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7955CEB521269B51004A123E /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		796A81EF211FB29B00648ABA /* EasyOTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyOTP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		796A81F2211FB29B00648ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		796A81F7211FB29B00648ABA /* EasyOTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyOTP.xcdatamodel; sourceTree = "<group>"; };
@@ -104,6 +123,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7955CEA621269B51004A123E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7955CEAA21269B51004A123E /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		796A81EC211FB29B00648ABA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +182,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7955CEAB21269B51004A123E /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				7955CEAC21269B51004A123E /* TodayViewController.swift */,
+				7955CEAE21269B51004A123E /* TodayViewController.xib */,
+				7955CEB121269B51004A123E /* Info.plist */,
+				7955CEB221269B51004A123E /* InfoPlist.strings */,
+				7955CEB521269B51004A123E /* widget.entitlements */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		796A81E6211FB29B00648ABA = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +201,7 @@
 				796A8207211FB29D00648ABA /* EasyOTPTests */,
 				796A8212211FB29D00648ABA /* EasyOTPUITests */,
 				79C48674212653A9003A7B11 /* today */,
+				7955CEAB21269B51004A123E /* widget */,
 				796A81F0211FB29B00648ABA /* Products */,
 				12C8F1CAA143528A426E929D /* Pods */,
 				103706430908492C68163208 /* Frameworks */,
@@ -175,6 +215,7 @@
 				796A8204211FB29D00648ABA /* EasyOTPTests.xctest */,
 				796A820F211FB29D00648ABA /* EasyOTPUITests.xctest */,
 				79C48671212653A9003A7B11 /* today.appex */,
+				7955CEA921269B51004A123E /* widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +283,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7955CEA821269B51004A123E /* widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7955CEBB21269B51004A123E /* Build configuration list for PBXNativeTarget "widget" */;
+			buildPhases = (
+				7955CEA521269B51004A123E /* Sources */,
+				7955CEA621269B51004A123E /* Frameworks */,
+				7955CEA721269B51004A123E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widget;
+			productName = widget;
+			productReference = 7955CEA921269B51004A123E /* widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		796A81EE211FB29B00648ABA /* EasyOTP */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 796A8218211FB29D00648ABA /* Build configuration list for PBXNativeTarget "EasyOTP" */;
@@ -257,6 +315,7 @@
 			);
 			dependencies = (
 				79C48680212653A9003A7B11 /* PBXTargetDependency */,
+				7955CEB721269B51004A123E /* PBXTargetDependency */,
 			);
 			name = EasyOTP;
 			productName = EasyOTP;
@@ -326,6 +385,9 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Lucas Ortigoso";
 				TargetAttributes = {
+					7955CEA821269B51004A123E = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					796A81EE211FB29B00648ABA = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -359,11 +421,21 @@
 				796A8203211FB29D00648ABA /* EasyOTPTests */,
 				796A820E211FB29D00648ABA /* EasyOTPUITests */,
 				79C48670212653A9003A7B11 /* today */,
+				7955CEA821269B51004A123E /* widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7955CEA721269B51004A123E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7955CEB021269B51004A123E /* TodayViewController.xib in Resources */,
+				7955CEB421269B51004A123E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		796A81ED211FB29B00648ABA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +510,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7955CEA521269B51004A123E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7955CEAD21269B51004A123E /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		796A81EB211FB29B00648ABA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +563,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7955CEB721269B51004A123E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7955CEA821269B51004A123E /* widget */;
+			targetProxy = 7955CEB621269B51004A123E /* PBXContainerItemProxy */;
+		};
 		796A8206211FB29D00648ABA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 796A81EE211FB29B00648ABA /* EasyOTP */;
@@ -501,6 +586,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7955CEAE21269B51004A123E /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7955CEAF21269B51004A123E /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		7955CEB221269B51004A123E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7955CEB321269B51004A123E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		796A81FB211FB29D00648ABA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -528,6 +629,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7955CEB921269B51004A123E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lucasortigoso.EasyOTP.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		7955CEBA21269B51004A123E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lucasortigoso.EasyOTP.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		796A8216211FB29D00648ABA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -800,6 +939,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7955CEBB21269B51004A123E /* Build configuration list for PBXNativeTarget "widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7955CEB921269B51004A123E /* Debug */,
+				7955CEBA21269B51004A123E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		796A81EA211FB29B00648ABA /* Build configuration list for PBXProject "EasyOTP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

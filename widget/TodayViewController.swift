@@ -22,8 +22,8 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.delegate = self
-        self.preferredContentSize.height = 500
         tableView?.dataSource = self
+        
         dddd?.stringValue = "Lucas"
     }
     
@@ -60,14 +60,14 @@ class TodayViewController: NSViewController, NCWidgetProviding, NSTableViewDeleg
     }
     
     
-
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Update your data and prepare for a snapshot. Call completion handler when you are done
         // with NoData if nothing has changed or NewData if there is new data since the last
         // time we called you
         completionHandler(.noData)
     }
-
+    
 }
 
 
