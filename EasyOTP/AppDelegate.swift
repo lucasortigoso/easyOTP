@@ -127,9 +127,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
     override func awakeFromNib() {
         
-        //        let icon = NSImage(named: "statusIcon")
-        //        icon?.isTemplate = true // best for dark mode
-        statusItem.title = "EasyOTP"
+        let icon = NSImage(named: NSImage.Name(rawValue: "StatusIcon"))
+        icon?.isTemplate = true // best for dark mode
+        statusItem.button?.image = icon
         statusItem.menu = statusMenu
         
         loadMenu()
@@ -207,7 +207,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         statusMenu.removeAllItems()
         getItems()?.forEach { item in
             let index = getItems()?.index(of: item)
-            statusMenu.addItem(withTitle: item.issuer!, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
+            statusMenu.addItem(withTitle: item.issuer! + " | " + item.username!, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
         }
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "A")

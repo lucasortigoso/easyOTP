@@ -15,6 +15,7 @@ class AddItemController: NSViewController {
     @IBOutlet weak var txtIssuer: NSTextField!
     @IBOutlet weak var txtUserName: NSTextField!
     @IBOutlet weak var txtSecret: NSTextField!
+    @IBOutlet weak var txtError: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,14 @@ class AddItemController: NSViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
         print("Save")
-        appDelegate.saveItem(issuer: self.txtIssuer.stringValue, username: self.txtUserName.stringValue, secret: self.txtSecret.stringValue)
-        self.view.window!.performClose(nil) // or performClose(self)
+        if(self.txtIssuer.stringValue.lengthOfBytes(using: String.Encoding.utf8) > 0 &&
+        self.txtUserName.stringValue.lengthOfBytes(using: String.Encoding.utf8) > 0 &&
+            self.txtSecret.stringValue.lengthOfBytes(using: String.Encoding.utf8) > 0){
+            appDelegate.saveItem(issuer: self.txtIssuer.stringValue, username: self.txtUserName.stringValue, secret: self.txtSecret.stringValue)
+            self.view.window!.performClose(nil) // or performClose(self)
+        } else {
+            self.txtError.isHidden = false
+        }
     }
     
     

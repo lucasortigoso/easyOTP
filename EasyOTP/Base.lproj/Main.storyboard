@@ -796,9 +796,28 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBw-Tt-fZG">
+                                <rect key="frame" x="28" y="136" width="4" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="esd-at-7tw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91X-B5-Op9">
+                                <rect key="frame" x="161" y="35" width="129" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please, fill all fields above" id="i5i-nC-no5">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="txtError" destination="91X-B5-Op9" id="Npa-IM-KCw"/>
                         <outlet property="txtIssuer" destination="Bwg-2N-OIH" id="d9T-Oc-qZ1"/>
                         <outlet property="txtSecret" destination="QDS-WX-QcY" id="ctR-yt-b1w"/>
                         <outlet property="txtUserName" destination="7hM-lJ-2Le" id="GTN-49-Z08"/>
@@ -806,7 +825,7 @@ DQ
                 </viewController>
                 <customObject id="0of-eo-Ljq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66" y="669"/>
+            <point key="canvasLocation" x="66" y="668.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="Ba0-vy-ntt">
