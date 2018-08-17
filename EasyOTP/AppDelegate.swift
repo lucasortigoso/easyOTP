@@ -203,11 +203,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         print("LAContext()")
     }
     
+    
+    func getItemName(key: Keys) -> String{
+        return key.issuer! + " | " + key.username!
+    }
+    
     func loadMenu(){
         statusMenu.removeAllItems()
         getItems()?.forEach { item in
             let index = getItems()?.index(of: item)
-            statusMenu.addItem(withTitle: item.issuer! + " | " + item.username!, action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
+            statusMenu.addItem(withTitle: getItemName(key: item), action: #selector(otpItemClicked), keyEquivalent: String(Int(index!)+1))
         }
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "A")
@@ -248,6 +253,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
                     let totp = TOTP(secret: data!)!
                     print("Token gerado")
                     self.copyToClipboard(text: totp.generate(time: Date()))
+                    self.postNotification(title: "EasyOTP", subtitle: "Token copied!", informativeText: "Just paste it ;)", image: "success")
                     print("Token copiado")
                     
                 } else {
@@ -281,10 +287,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
     
     @IBAction func otpItemClicked(sender: NSMenuItem) {
-        print(getToken(secret: (getItems()?.first{$0.issuer == sender.title}?.secret)!))
+        
+        print(getToken(secret: (getItems()?.first{self.getItemName(key: $0) == sender.title}?.secret)!))
+        
         Timer.scheduledTimer(withTimeInterval: 120, repeats: false) { [weak self] timer in
             self?.invalidateAuth()
         }
+    }
+    
+    func postNotification(title: String, subtitle: String, informativeText: String, image: String? ){
+        let notification = NSUserNotification()
+        notification.identifier = String(Date().timeIntervalSince1970)
+        notification.title = title
+        notification.soundName = "Morse"
+        notification.subtitle = subtitle
+        notification.informativeText = informativeText
+        if(image != nil){
+            notification.contentImage = NSImage(named: NSImage.Name(rawValue: image!))
+        }
+        // Manually display the notification
+        let notificationCenter = NSUserNotificationCenter.default
+        notificationCenter.deliver(notification)
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
