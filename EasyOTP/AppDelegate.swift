@@ -198,6 +198,90 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         
     }
     
+    @objc func importItemClicked() {
+        
+        print("importItemClicked")
+        self.showCloseAlert(message: "Volte mais tarde!", title: "Num tem", completion: { _ in
+            
+        })
+    }
+    
+    @objc func exportItemClicked(){
+        print("exportItemClicked")
+        
+        let items = appDelegate.getItems()
+        
+        var texts = ""
+//        let dic = NSMutableDictionary()
+        items?.forEach({ it in
+            texts.append("-----------------------------------------------\n")
+            texts.append("id : \(it.id?.uuidString ?? "")\n")
+            texts.append("issuer : \(it.issuer ?? "")\n")
+            texts.append("secret : \(it.secret ?? "")\n")
+            texts.append("username : \(it.username ?? "")\n")
+            texts.append("\n\n")
+            
+//            dic.setValue(it.id?.uuidString ?? "", forKey: "id")
+//            dic.setValue(it.issuer ?? "", forKey: "issuer")
+//            dic.setValue(it.secret ?? "", forKey: "secret")
+//            dic.setValue(it.username ?? "", forKey: "username")
+//            dic.setValue(it.createddate, forKey: "createddate")
+//            list.append(dic)
+        })
+        
+//        let paths = NSSearchPathForDirectoriesInDomains(.userDirectory, .userDomainMask, true)
+        let documentDic = self.getDocumentsDirectory()
+ 
+        let fileName = documentDic.appendingPathComponent("keys.txt")
+//        if !FileManager.default.fileExists(atPath: plistPath.absoluteString) {
+//            let bundle = Bundle.main.path(forResource: "myPlistFile", ofType: "plist")!
+//            do {
+//                FileManager.default.createFile(atPath: plistPath.absoluteString,
+//                                               contents: ,
+//                                               attributes: nil)
+//                try FileManager.default.copyItem(at: bundle, to: plistPath)
+//            } catch {
+//                // Customize this code block to include application-specific recovery steps.
+//                let nserror = error as NSError
+//                print(nserror)
+//            }
+//        }
+        
+        do {
+            try texts.write(to: fileName, atomically: true, encoding: .utf8)
+            self.showCloseAlert(message: fileName.path, title: "Tá la gato molhado", completion: { _ in
+                self.openAndSelectFile(filename: fileName.path)
+            })
+        } catch {
+            print(error)
+            self.showCloseAlert(message: fileName.path, title: "Deu certo não", completion: { _ in
+                
+            })
+        }
+//        dic.write(to: plistPath, atomically: true)
+    }
+    
+    func openAndSelectFile(filename:String){
+        let files = [URL(fileURLWithPath: filename)];
+        NSWorkspace.shared.activateFileViewerSelecting(files);
+    }
+    
+    func showCloseAlert(message: String, title: String, completion : (Bool)->Void) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = message
+        alert.alertStyle = NSAlert.Style.informational
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        completion(alert.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn)
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
     @objc func invalidateAuth(){
         localAuthenticationContext = LAContext()
         print("LAContext()")
@@ -217,6 +301,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Add...", action: #selector(addItemClicked), keyEquivalent: "A")
         statusMenu.addItem(withTitle: "Remove...", action: #selector(removeItemClicked), keyEquivalent: "R")
+        statusMenu.addItem(NSMenuItem.separator())
+        statusMenu.addItem(withTitle: "Import...", action: #selector(importItemClicked), keyEquivalent: "I")
+        statusMenu.addItem(withTitle: "Export...", action: #selector(exportItemClicked), keyEquivalent: "E")
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(withTitle: "Quit", action: #selector(quitClicked), keyEquivalent: "Q")
     }
